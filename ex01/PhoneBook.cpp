@@ -87,7 +87,7 @@ void PhoneBook::searchContact()
     }
 
     bool valid = true;
-    int j = 0;
+    size_t j = 0;
     while (j < index.length())
     {
         if (!(index[j] >= '0' && index[j] <= '9'))
@@ -104,7 +104,7 @@ void PhoneBook::searchContact()
         return;
     }
 
-    int int_index = atoi(index.c_str());
+    int int_index = std::atoi(index.c_str());
     if (int_index < 0 || int_index >= contactCount)
     {
         std::cout << "The index is out of range" << std::endl;
@@ -128,30 +128,4 @@ void PhoneBook::searchContact()
             << contacts[int_index].getDarkestSecret() << std::endl;
     } 
 
-}
-
-int main()
-{
-    PhoneBook p;
-    std::string command;
-
-    while (command != "EXIT")
-    {
-        std::cout << "Enter a command (ADD, SEARCH, EXIT): ";
-        std::getline(std::cin, command);
-        if (command == "ADD")
-        {
-            p.addContact();
-        }
-    
-        else if (command == "SEARCH")
-        {
-            p.searchContact();
-        }
-        else if (command == "EXIT")
-        {
-            break;
-        }
-    }
-    return 0;
 }
