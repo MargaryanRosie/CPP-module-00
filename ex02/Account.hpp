@@ -30,6 +30,7 @@ public:
 	static void	displayAccountsInfos( void );
 
 	Account( int initial_deposit );
+	//everytime account deposit is created, someone gives it initial_deposit
 	~Account( void );
 
 	void	makeDeposit( int deposit );

@@ -27,6 +27,7 @@ int		main( void ) {
 	int	const				amounts[]	= { 42, 54, 957, 432, 1234, 0, 754, 16576 };      //Initial balances of the accounts
 	size_t const			amounts_size( sizeof(amounts) / sizeof(int) );
 	accounts_t				accounts( amounts, amounts + amounts_size );      //creating the vector of the accounts
+	//so the constructor is called each time the object is created
 	//function that takes the first pointer to the amounts
 	//amounts + amounts_size means move the pointer forward by 8 elements
 	//and it returns a dynamic array of Account objects
