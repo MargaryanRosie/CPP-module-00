@@ -52,30 +52,30 @@ int		main( void ) {
 	ints_t::iterator	wit_end		= withdrawals.end();
 
 	Account::displayAccountsInfos();
-	std::for_each( acc_begin, acc_end, std::mem_fun_ref( &Account::displayStatus ) );       //displayStatus is a member function, so it needs an object, so mem_fun_ref
-	                                                                                       //converts it to something that for_each can use
+	// std::for_each( acc_begin, acc_end, std::mem_fun_ref( &Account::displayStatus ) );       //displayStatus is a member function, so it needs an object, so mem_fun_ref
+	//                                                                                        //converts it to something that for_each can use
 
-	for ( acc_int_t it( acc_begin, dep_begin );          //initialize the pair with initial values, it is a variable, first is acc_begin and second is dep_begin
-		  it.first != acc_end && it.second != dep_end;
-		  ++(it.first), ++(it.second) ) {                 //move both iterators forward
+	// for ( acc_int_t it( acc_begin, dep_begin );          //initialize the pair with initial values, it is a variable, first is acc_begin and second is dep_begin
+	// 	  it.first != acc_end && it.second != dep_end;
+	// 	  ++(it.first), ++(it.second) ) {                 //move both iterators forward
 
-		(*(it.first)).makeDeposit( *(it.second) );         //*(it.first) is an Account object, so we call makeDeposit function on it with the object that contains deposit value
-	}
+	// 	(*(it.first)).makeDeposit( *(it.second) );         //*(it.first) is an Account object, so we call makeDeposit function on it with the object that contains deposit value
+	// }
 
-	//std::for_each(begin, end, function);      this means run this function on every element between begin and end
+	// //std::for_each(begin, end, function);      this means run this function on every element between begin and end
 
-	Account::displayAccountsInfos();         //a static member function, no object needed
-	std::for_each( acc_begin, acc_end, std::mem_fun_ref( &Account::displayStatus ) );
+	// Account::displayAccountsInfos();         //a static member function, no object needed
+	// std::for_each( acc_begin, acc_end, std::mem_fun_ref( &Account::displayStatus ) );
 
-	for ( acc_int_t it( acc_begin, wit_begin );
-		  it.first != acc_end && it.second != wit_end;
-		  ++(it.first), ++(it.second) ) {
+	// for ( acc_int_t it( acc_begin, wit_begin );
+	// 	  it.first != acc_end && it.second != wit_end;
+	// 	  ++(it.first), ++(it.second) ) {
 
-		(*(it.first)).makeWithdrawal( *(it.second) );
-	}
+	// 	(*(it.first)).makeWithdrawal( *(it.second) );
+	// }
 
-	Account::displayAccountsInfos();
-	std::for_each( acc_begin, acc_end, std::mem_fun_ref( &Account::displayStatus ) );
+	// Account::displayAccountsInfos();
+	// std::for_each( acc_begin, acc_end, std::mem_fun_ref( &Account::displayStatus ) );
 
 	return 0;
 }

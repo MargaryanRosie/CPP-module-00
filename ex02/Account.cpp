@@ -53,9 +53,22 @@ Account::~Account( void ) {
 			   << ";closed" << std::endl;
 }
 
-int main()
-{
-    Account account(42);
 
-    return 0;
+//[19920104_091532] accounts:8;total:20049;deposits:0;withdrawals:0
+
+void    Account::displayAccountsInfos(void)
+{
+    _displayTimestamp();
+    std::cout << "accounts:" << _nbAccounts
+		<< ";total:" << _totalAmount
+		<< ";deposits:" << _totalNbDeposits
+        << ";withdrawals:" << _totalNbWithdrawals
+        << std::endl;
 }
+
+// int main()
+// {
+//     Account account(42);
+
+//     return 0;
+// }
