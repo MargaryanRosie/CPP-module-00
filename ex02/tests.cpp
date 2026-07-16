@@ -52,8 +52,8 @@ int		main( void ) {
 	ints_t::iterator	wit_end		= withdrawals.end();
 
 	Account::displayAccountsInfos();
-	// std::for_each( acc_begin, acc_end, std::mem_fun_ref( &Account::displayStatus ) );       //displayStatus is a member function, so it needs an object, so mem_fun_ref
-	//                                                                                        //converts it to something that for_each can use
+	std::for_each( acc_begin, acc_end, std::mem_fun_ref( &Account::displayStatus ) );       //displayStatus is a member function, so it needs an object, so mem_fun_ref
+	                                                                                       //converts it to something that for_each can use
 
 	// for ( acc_int_t it( acc_begin, dep_begin );          //initialize the pair with initial values, it is a variable, first is acc_begin and second is dep_begin
 	// 	  it.first != acc_end && it.second != dep_end;
