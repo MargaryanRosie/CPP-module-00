@@ -135,6 +135,10 @@ bool    Account::makeWithdrawal( int withdrawal )
     return true;
 }
 
+int Account::checkAmount( void ) const {
+    return ( _amount );
+}
+
 // int main()
 // {
 //     Account account(42);
